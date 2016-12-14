@@ -12,13 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using ContraladorBusqueda;
 namespace Ejemplo_WPF2
 {
     /// <summary>
     /// Interaction logic for frmTutor.xaml
     /// </summary>
-    public partial class frmTutor : UserControl
+    public partial class frmTutor : UserControl, IResultadoUserControl
     {
         private Tutor tutor;
         public frmTutor()
@@ -28,13 +28,16 @@ namespace Ejemplo_WPF2
             gridobjecto.DataContext = tutor;
         }
 
+        public event MiEventoHandler ResultadoUserControl;
+
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(tutor.NombreTutor) && !string.IsNullOrEmpty(tutor.Parentesco))
             {
                 MainWindow.mananger.ListaTutor.Add(tutor);
-                MessageBox.Show("Guardado correctamente");
-                tutor = new Tutor();
+                //MessageBox.Show("Guardado correctamente");
+                //tutor = new Tutor();
+                ResultadoUserControl?.Invoke(tutor);
             }
             else
                 MessageBox.Show("Debes llenar los campos");

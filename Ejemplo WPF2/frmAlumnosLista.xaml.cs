@@ -12,13 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using ContraladorBusqueda;
 namespace Ejemplo_WPF2
 {
     /// <summary>
     /// Interaction logic for frmListaAlumnos.xaml
     /// </summary>
-    public partial class frmaAlumnosList : UserControl
+    public partial class frmaAlumnosList : UserControl, IResultadoUserControl
     {
         
         public frmaAlumnosList()
@@ -26,6 +26,9 @@ namespace Ejemplo_WPF2
             InitializeComponent();
             CargarLista();
         }
+
+        public event MiEventoHandler ResultadoUserControl;
+
         public void CargarLista()
         {
             dgDatos.ItemsSource = null;
@@ -33,7 +36,15 @@ namespace Ejemplo_WPF2
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            frmAlumnos f = new frmAlumnos();
+            ContraladorB contraldorb=new ContraladorB(f);
+            bool? bolok = contraldorb.ShowDialog();
+            if (bolok != null && bolok.Value)
+            {
+                Alumnos alumno = (Alumnos)contraldorb.objeto;
+                MessageBox.Show("Guardado correctamente Alumno : " +  alumno.Nombre);
+            }
+               
         }
     }
     public class Alumnos
