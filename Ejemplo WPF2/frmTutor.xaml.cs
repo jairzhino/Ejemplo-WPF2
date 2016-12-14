@@ -33,7 +33,8 @@ namespace Ejemplo_WPF2
             if (!string.IsNullOrEmpty(tutor.NombreTutor) && !string.IsNullOrEmpty(tutor.Parentesco))
             {
                 MainWindow.mananger.ListaTutor.Add(tutor);
-
+                MessageBox.Show("Guardado correctamente");
+                tutor = new Tutor();
             }
             else
                 MessageBox.Show("Debes llenar los campos");

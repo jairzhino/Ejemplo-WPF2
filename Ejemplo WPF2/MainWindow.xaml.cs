@@ -49,7 +49,18 @@ namespace Ejemplo_WPF2
             frmaTutorList f = new frmaTutorList();
             MostrarContenedores(f, contenedor);
         }
-        
+
+        private void btnAlumnos_Click(object sender, RoutedEventArgs e)
+        {
+            frmAlumnos f = new frmAlumnos();
+            MostrarContenedores(f, contenedor);
+        }
+
+        private void btnTutores_Click(object sender, RoutedEventArgs e)
+        {
+            frmTutor f = new frmTutor();
+            MostrarContenedores(f, contenedor);
+        }
     }
     public class Manager
     {

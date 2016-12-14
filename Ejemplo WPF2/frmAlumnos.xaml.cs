@@ -20,9 +20,32 @@ namespace Ejemplo_WPF2
     /// </summary>
     public partial class frmAlumnos : UserControl
     {
+        private Alumnos alumno;
         public frmAlumnos()
         {
             InitializeComponent();
+            alumno = new Alumnos();
+            cargarCombobox();
+            gridobjecto.DataContext = alumno;
+        }
+        public void cargarCombobox()
+        {
+            cbtutor.ItemsSource = null;
+            cbtutor.ItemsSource = MainWindow.mananger.ListaTutor;
+            cbtutor.DisplayMemberPath = "NombreTutor";
+        }
+        private void btnGuardar_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(alumno.Nombre) && !string.IsNullOrEmpty(alumno.Curso))
+            {
+                MainWindow.mananger.ListaAlumnos.Add(alumno);
+                MessageBox.Show("Guardado correctamente");
+                alumno = new Alumnos();
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los campos");
+            }
         }
     }
 }
