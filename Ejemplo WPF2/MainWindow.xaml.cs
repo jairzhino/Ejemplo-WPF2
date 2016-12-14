@@ -26,7 +26,34 @@ namespace Ejemplo_WPF2
             InitializeComponent();
         }
 
-        public static void ChangeUserControl(object Usercontrol)
+        public static void MostrarContenedores(object Usercontrol,Grid grid)
+        {
+            grid.Children.Clear();
+            ScrollViewer sv = new ScrollViewer();
+            sv.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
+            sv.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
+            sv.Content = Usercontrol;
+            grid.Children.Add(sv);            
+        }
+
+        private void btnListAlumnos_Click(object sender, RoutedEventArgs e)
+        {
+            frmListaAlumnos f = new frmListaAlumnos();
+            MostrarContenedores(f,contenedor);
+        }
+
+        private void btnAlumnos_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnListTutores_Click(object sender, RoutedEventArgs e)
+        {
+            frmListaTutor f = new frmListaTutor();
+            MostrarContenedores(f, contenedor);
+        }
+
+        private void btnTutor_Click(object sender, RoutedEventArgs e)
         {
 
         }

@@ -18,9 +18,9 @@ namespace Ejemplo_WPF2
     /// <summary>
     /// Interaction logic for frmTutor.xaml
     /// </summary>
-    public partial class frmTutor : UserControl
+    public partial class frmListaTutor : UserControl
     {
-        public frmTutor()
+        public frmListaTutor()
         {
             InitializeComponent();
         }
