@@ -24,6 +24,7 @@ namespace Ejemplo_WPF2
         public MainWindow()
         {
             InitializeComponent();
+            mananger = new Manager();
         }
 
         public static void MostrarContenedores(object Usercontrol,Grid grid)
@@ -38,29 +39,33 @@ namespace Ejemplo_WPF2
 
         private void btnListAlumnos_Click(object sender, RoutedEventArgs e)
         {
-            frmListaAlumnos f = new frmListaAlumnos();
+            frmaAlumnosList f = new frmaAlumnosList();
             MostrarContenedores(f,contenedor);
         }
 
-        private void btnAlumnos_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
+   
         private void btnListTutores_Click(object sender, RoutedEventArgs e)
         {
-            frmListaTutor f = new frmListaTutor();
+            frmaTutorList f = new frmaTutorList();
             MostrarContenedores(f, contenedor);
         }
-
-        private void btnTutor_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
     public class Manager
     {
-        public List<Alumnos> ListAlumnos{ get; set; }
-        public List<Tutor> ListTutor { get; set; }
+        public List<Alumnos> ListaAlumnos{ get; set; }
+        public List<Tutor> ListaTutor { get; set; }
+
+        public Manager()
+        {
+            ListaAlumnos = new List<Alumnos>();
+            ListaTutor = new List<Tutor>();
+            ListaTutor.Add(new Tutor() { NombreTutor = "Juan Percy", Parentesco = "Padre" });
+            ListaTutor.Add(new Tutor() { NombreTutor = "Juana Guilen", Parentesco = "Madre" });
+            ListaTutor.Add(new Tutor() { NombreTutor = "Pedro Magallanes", Parentesco = "Tio" });
+            ListaAlumnos.Add(new Alumnos() { Nombre = "Pepito Percy", Curso = "4to Primaria" });
+            ListaAlumnos.Add(new Alumnos() { Nombre = "Andresito Garcia", Curso = "5to Secundaria" });
+            ListaAlumnos.Add(new Alumnos() { Nombre = "Analy Magallanes", Curso = "6to Primaria" });
+        }
     }
 }

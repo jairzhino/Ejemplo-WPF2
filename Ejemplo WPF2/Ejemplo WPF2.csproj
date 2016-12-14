@@ -55,11 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="frmListaAlumnos.xaml">
+    <Page Include="frmAlumnos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="frmListaTutor.xaml">
+    <Page Include="frmAlumnosLista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmTutor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmTutorLista.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -71,11 +79,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="frmListaAlumnos.xaml.cs">
-      <DependentUpon>frmListaAlumnos.xaml</DependentUpon>
+    <Compile Include="frmAlumnos.xaml.cs">
+      <DependentUpon>frmAlumnos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="frmListaTutor.xaml.cs">
-      <DependentUpon>frmListaTutor.xaml</DependentUpon>
+    <Compile Include="frmAlumnosLista.xaml.cs">
+      <DependentUpon>frmAlumnosLista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmTutor.xaml.cs">
+      <DependentUpon>frmTutor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmTutorLista.xaml.cs">
+      <DependentUpon>frmTutorLista.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

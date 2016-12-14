@@ -16,14 +16,19 @@ using System.Windows.Shapes;
 namespace Ejemplo_WPF2
 {
     /// <summary>
-    /// Interaction logic for frmListaAlumnos.xaml
+    /// Interaction logic for frmTutor.xaml
     /// </summary>
-    public partial class frmListaAlumnos : UserControl
+    public partial class frmaTutorList : UserControl
     {
-        
-        public frmListaAlumnos()
+        public frmaTutorList()
         {
             InitializeComponent();
+            CargarLista();
+        }
+        public void CargarLista()
+        {
+            dgDatos.ItemsSource = null;
+            dgDatos.ItemsSource = MainWindow.mananger.ListaTutor;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,11 +36,9 @@ namespace Ejemplo_WPF2
 
         }
     }
-    public class Alumnos
+    public class Tutor
     {
-        public string Nombre { get; set; }
-        public string Curso { get; set; }
-        public Tutor OBJTutor { get; set; }
+        public string NombreTutor { get; set; }
+        public string Parentesco { get; set; }
     }
-    
 }

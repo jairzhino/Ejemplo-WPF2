@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Ejemplo_WPF2
 {
     /// <summary>
-    /// Interaction logic for frmTutor.xaml
+    /// Interaction logic for frmAlumnos.xaml
     /// </summary>
-    public partial class frmListaTutor : UserControl
+    public partial class frmAlumnos : UserControl
     {
-        public frmListaTutor()
+        public frmAlumnos()
         {
             InitializeComponent();
         }
-    }
-    public class Tutor
-    {
-        public string NombreTutor { get; set; }
-        public string Parentesco { get; set; }
     }
 }
