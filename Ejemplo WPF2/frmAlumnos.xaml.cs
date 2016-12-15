@@ -34,7 +34,7 @@ namespace Ejemplo_WPF2
 
         public void cargarCombobox()
         {
-            List<Tutor> l= MainWindow.mananger.ListaTutor;
+            List<Tutor> l= new List<Tutor>(MainWindow.mananger.ListaTutor);
             l.Add(new Tutor() { NombreTutor="Nuevo Tutor", Parentesco="Ninguno"});
             cbtutor.ItemsSource = null;
             cbtutor.ItemsSource = l;
